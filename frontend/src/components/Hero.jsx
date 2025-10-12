@@ -5,7 +5,7 @@ function Hero()
     <div className="heroContainer">
         <div className="heroLeft">
             <h3> hi , i'm saad elmahi</h3>
-            <p>  I'm a passionate software developer focused on building modern web applications with React, Django, and AI tools. I love turning ideas into clean, efficient, and responsive digital solutions.</p>
+            <p>I'm currently in my 4th year in Software Engineering . I'm passionate about building modern web applications and always eager to learn new technologies.</p>
        
         </div>
 <div className="heroRight">

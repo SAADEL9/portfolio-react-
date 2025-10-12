@@ -1,36 +1,37 @@
 .card {
-  background-color: #111;
-  color: white;
+  background: #111;
+  color: #f3f4f6;
   max-width: 340px;
   padding: 24px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  border-radius: 14px;
+  box-shadow: 0 4px 18px 0 rgba(30, 41, 59, 0.14);
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 16px;
-  margin: 16px;
-}
-
-.card-logo {
-  height: 150px;
-  object-fit: contain;
+  margin: 18px;
+  border: 1.5px solid #1e3a8a;
 }
 
 .card-content {
   text-align: center;
+  background: #111;
 }
 
 .card-title {
-  font-size: 1.2rem;
-  font-weight: bold;
+  font-size: 1.3rem;
+  font-weight: 700;
   margin-bottom: 8px;
+  color: #2563eb;
+  letter-spacing: 0.2px;
+  background: #111;
 }
 
 .card-description {
-  font-size: 0.9rem;
-  color: #ccc;
+  font-size: 1rem;
+  color: #d1d5db;
   margin-bottom: 12px;
+  background: #111;
 }
 
 .card-techs {
@@ -38,28 +39,31 @@
   flex-wrap: wrap;
   gap: 8px;
   justify-content: center;
-  margin-bottom: 16px;
+  margin-bottom: 25px;
+  background: #111;
 }
 
 .tech-badge {
-  background-color: #222;
+  background: #1e3a8a;
   padding: 6px 12px;
   border-radius: 999px;
-  font-size: 0.75rem;
-  color: white;
+  font-size: 0.8rem;
+  color: #fff;
+  font-weight: 500;
+  border: none;
 }
 
 .card-button {
-  padding: 8px 16px;
-  background-color: white;
-  color: black;
+  
+  padding: 8px 18px;
+  background: #2563eb;
+  color: #fff;
   border: none;
-  border-radius: 6px;
+  border-radius: 7px;
   text-decoration: none;
-  font-weight: 500;
-  transition: background-color 0.2s;
-}
-
-.card-button:hover {
-  background-color: #e0e0e0;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.2px;
+  box-shadow: 0 1px 4px 0 rgba(30, 64, 175, 0.10);
+  transition: none;
 }

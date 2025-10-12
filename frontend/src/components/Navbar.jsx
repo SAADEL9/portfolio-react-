@@ -12,7 +12,7 @@ function Navbar() {
   return (
     <div className="navClass">
       <nav className="navbar">
-        <div className="logo">SAAD ELMAHI</div>
+        <Link to="/" className="logo" onClick={() => setMenuOpen(false)}>SAAD ELMAHI</Link>
 
         {/* Hamburger Icon */}
         <button className="menu-toggle" onClick={toggleMenu}>
@@ -23,7 +23,7 @@ function Navbar() {
         <div className={`nav-links ${menuOpen ? "active" : ""}`}>
           <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
           <Link to="/projects" onClick={() => setMenuOpen(false)}>Projects</Link>
-          <Link to="/cv" onClick={() => setMenuOpen(false)}>CV</Link>
+          <a href="/cv.pdf" download onClick={() => setMenuOpen(false)} style={{textDecoration: 'none', color: 'inherit'}}>CV</a>
         </div>
       </nav>
     </div>

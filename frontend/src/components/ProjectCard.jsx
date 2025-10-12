@@ -1,10 +1,8 @@
 import "../css/ProjectCard.css";
 
-function ProjectCard({ logo, title, description, techs, demoLink }) {
+function ProjectCard({ title, description, techs, demoLink }) {
   return (
     <div className="card">
-      <img src={logo} alt={`${title} logo`} className="card-logo" />
-
       <div className="card-content">
         <h2 className="card-title">{title}</h2>
         <p className="card-description">{description}</p>

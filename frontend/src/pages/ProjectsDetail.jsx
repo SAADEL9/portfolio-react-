@@ -5,23 +5,44 @@ import askLogo from "../assets/home1.png";
 const projects = [
   {
     logo: askLogo,
-    title: "AskFinancee",
-    description: "A modern financial services platform built with Next.js...",
-    techs: ["html", "css", "django", "dialogflow", "Shadcn UI"],
+    title: "fit trainer",
+    description: "A modern financial services platform built with Next.js...A modern financial services platform built with Next.js...",
+    techs: ["html", "css", "javascript"],
     demoLink: "#"
   },
   {
     logo: askLogo,
-    title: "AskFinancee",
+    title: "job rec",
     description: "A modern financial services platform built with Next.js...",
-    techs: ["html", "css", "django", "dialogflow", "Shadcn UI"],
+    techs: ["react", "css", "django", "python", "spacy", "scikit-learn","SQLite"],
     demoLink: "#"
   },
   {
     logo: askLogo,
-    title: "AskFinancee",
+    title: "garage auto",
     description: "A modern financial services platform built with Next.js...",
-    techs: ["html", "css", "django", "dialogflow", "Shadcn UI"],
+    techs: ["html", "css", "bootstrap", "dialogflow", "django"],
+    demoLink: "#"
+  },
+  {
+    logo: askLogo,
+    title: "gestion d'hotel",
+    description: "A modern financial services platform built with Next.js...",
+    techs: ["c"],
+    demoLink: "#"
+  },
+  {
+   
+    title: "school management dashboard",
+    description: "A school management dashboard created with HTML, CSS, and JavaScript, featuring student and class tracking.",
+    techs: ["html ", "css","javascript"],
+    demoLink: "#"
+  },
+   {
+    
+    title: "ecomerce website",
+    description: "A modern financial services platform built with Next.js...",
+    techs: ["symfony"],
     demoLink: "#"
   },
 ];
