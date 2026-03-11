@@ -1,85 +1,153 @@
-.card {
-  background: #111;
-  color: #f3f4f6;
-  max-width: 340px;
-  padding: 24px;
-  border-radius: 14px;
-  box-shadow: 0 4px 18px 0 rgba(30, 41, 59, 0.14);
+/* =====================
+   BRUTALIST PROJECT CARD
+   ===================== */
+
+.brutalist-card {
+  width: 100%;
+  border: 3px solid #fff;
+  background-color: #000;
+  padding: 1.5rem;
+  box-shadow: 8px 8px 0 #fff;
+  font-family: "Arial", sans-serif;
   display: flex;
   flex-direction: column;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.brutalist-card:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 11px 11px 0 #fff;
+}
+
+/* Header */
+.brutalist-card__header {
+  display: flex;
   align-items: center;
-  gap: 16px;
-  margin: 18px;
-  border: 1.5px solid #1e3a8a;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #fff;
+  padding-bottom: 1rem;
 }
 
-.card-logo {
-  height: 160px;
-  width: auto;
-  object-fit: contain;
+.brutalist-card__icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background-color: #fff;
-  padding: 12px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 0.45rem;
+  width: 2.4rem;
+  height: 2.4rem;
 }
 
-.card-logo:hover {
-  transform: scale(1.05) translateY(-4px);
-  box-shadow: 0 8px 20px rgba(79, 195, 247, 0.2);
+.brutalist-card__svg {
+  height: 1.3rem;
+  width: 1.3rem;
+  color: #000;
 }
 
-.card-content {
-  text-align: center;
-  background: #111;
+.brutalist-card__alert {
+  font-weight: 900;
+  color: #fff;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
 }
 
-.card-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  margin-bottom: 8px;
-  color: #2563eb;
-  letter-spacing: 0.2px;
-  background: #111;
+/* Message / description */
+.brutalist-card__message {
+  color: #aaa;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #333;
+  flex-grow: 1;
+  margin-bottom: 0;
 }
 
-.card-description {
-  font-size: 1rem;
-  color: #d1d5db;
-  margin-bottom: 12px;
-  background: #111;
-}
-
-.card-techs {
+/* Tech badges */
+.brutalist-card__techs {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
-  justify-content: center;
-  margin-bottom: 25px;
-  background: #111;
+  gap: 0.4rem;
+  padding: 1rem 0;
+  border-bottom: 2px solid #333;
 }
 
-.tech-badge {
-  background: #1e3a8a;
-  padding: 6px 12px;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  color: #fff;
-  font-weight: 500;
-  border: none;
+.brutalist-tech-badge {
+  display: inline-block;
+  padding: 0.2rem 0.55rem;
+  border: 2px solid var(--tech-color, #fff);
+  color: var(--tech-color, #fff);
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: transparent;
+  font-family: "Arial", monospace;
 }
 
-.card-button {
-  
-  padding: 8px 18px;
-  background: #2563eb;
+/* Actions */
+.brutalist-card__actions {
+  margin-top: 1rem;
+}
+
+.brutalist-card__button {
+  display: block;
+  width: 100%;
+  padding: 0.7rem;
+  text-align: center;
+  font-size: 0.9rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  border: 3px solid #fff;
+  background-color: #000;
   color: #fff;
-  border: none;
-  border-radius: 7px;
+  position: relative;
+  transition: all 0.2s ease;
+  box-shadow: 5px 5px 0 #fff;
+  overflow: hidden;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 1rem;
-  letter-spacing: 0.2px;
-  box-shadow: 0 1px 4px 0 rgba(30, 64, 175, 0.10);
-  transition: none;
+  font-family: "Arial", monospace;
+}
+
+.brutalist-card__button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.08),
+    transparent
+  );
+  transition: all 0.5s;
+}
+
+.brutalist-card__button:hover::before {
+  left: 100%;
+}
+
+.brutalist-card__button--github:hover {
+  background-color: #7C3AED;
+  border-color: #7C3AED;
+  color: #fff;
+  box-shadow: 5px 5px 0 #4c1d95;
+  transform: translate(-2px, -2px);
+}
+
+.brutalist-card__button:active {
+  transform: translate(5px, 5px);
+  box-shadow: none;
+}
+
+@media (max-width: 768px) {
+  .brutalist-card {
+    box-shadow: 5px 5px 0 #fff;
+  }
 }

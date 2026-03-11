@@ -87,33 +87,31 @@ function Home() {
       
       <Hero />
 
-      {/* Projects */}
-      <div
-        style={{
-          display: 'flex',
-          flexWrap: 'wrap',
-          justifyContent: 'center',
-          padding: '32px',
-          backgroundColor: '#000',
-          borderTop: "1px solid #374151"
-        }}
-      >
-        {projects.map((project, i) => (
-          <ProjectCard key={i} {...project} />
-        ))}
-      </div>
+      {/* Projects Section */}
+      <section className="projects-section" id="projects">
+        <div className="projects-section-header">
+          <span className="terminal-prefix">// my work</span>
+          <h2>Projects</h2>
+          <p>$ ls -la ./projects | grep "built with passion"</p>
+        </div>
+        <div className="projects-grid">
+          {projects.map((project, i) => (
+            <ProjectCard key={i} {...project} />
+          ))}
+        </div>
+      </section>
 
       <About />
 
       {/* Certifications */}
-     <div className="certif-section">
-  <h2>Certifications</h2>
-  <div className="certif-grid">
-    {certifs.map((certif, i) => (
-      <Certifications key={i} title={certif.title} school={certif.school} />
-    ))}
-  </div>
-</div>
+      <div className="certif-section">
+        <h2>Certifications</h2>
+        <div className="certif-grid">
+          {certifs.map((certif, i) => (
+            <Certifications key={i} title={certif.title} school={certif.school} />
+          ))}
+        </div>
+      </div>
 
       <Footer />
     </>
