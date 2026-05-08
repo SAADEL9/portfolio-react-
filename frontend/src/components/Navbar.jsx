@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import cvPdf from '../assets/SAAD_EL_MAHI.pdf';
 import "../css/Navstyle.css";
 
 function Navbar() {
@@ -23,7 +24,7 @@ function Navbar() {
         <div className={`nav-links ${menuOpen ? "active" : ""}`}>
           <Link to="/" onClick={() => setMenuOpen(false)}>Home</Link>
           <Link to="/projects" onClick={() => setMenuOpen(false)}>Projects</Link>
-          <a href="/cv.pdf" download onClick={() => setMenuOpen(false)} style={{textDecoration: 'none', color: 'inherit'}}>CV</a>
+          <a href={cvPdf} download onClick={() => setMenuOpen(false)} style={{textDecoration: 'none', color: 'inherit'}}>CV</a>
         </div>
       </nav>
     </div>

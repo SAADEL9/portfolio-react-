@@ -1,4 +1,5 @@
-import heroImg from '../assets/hero.png';
+import heroImg from '../assets/saad.png';
+import cvPdf from '../assets/SAAD_EL_MAHI.pdf';
 import "../css/heroStyle.css";
 
 function Hero() {
@@ -25,7 +26,7 @@ function Hero() {
 
         {/* CTAs */}
         <div className="hero-cta-row">
-          <a href="/cv.pdf" download className="btn-primary">Download CV</a>
+          <a href={cvPdf} download className="btn-primary">Download CV</a>
           <a href="#projects" className="btn-ghost">View Projects</a>
         </div>
 
