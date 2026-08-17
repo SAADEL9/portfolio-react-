@@ -93,6 +93,79 @@
 }
 
 @media (max-width: 768px) {
-  .certif-section  { padding: 4rem 5%; }
-  .certif-grid     { grid-template-columns: 1fr; }
+  /* Section */
+  .certif-section {
+    padding: 3rem 4%;
+  }
+
+  /* Title */
+  .certif-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2.2rem;
+  }
+
+  .certif-section h2::after {
+    bottom: -8px;
+    width: 40px;
+    height: 3px;
+  }
+
+  /* Grid */
+  .certif-grid {
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  /* Cards */
+  .certif-card {
+    padding: 1rem 1.1rem;
+    border-radius: var(--radius-md);
+  }
+
+  /* Disable movement on mobile */
+  .certif-card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  /* Certification text */
+  .certif-text {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+
+  /* Issuer */
+  .certif-issuer {
+    margin-top: 0.35rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.04em;
+  }
+}
+@media (max-width: 480px) {
+  .certif-section {
+    padding: 2.5rem 3%;
+  }
+
+  .certif-section h2 {
+    font-size: 1.3rem;
+    margin-bottom: 1.8rem;
+  }
+
+  .certif-grid {
+    gap: 0.6rem;
+  }
+
+  .certif-card {
+    padding: 0.8rem 0.9rem;
+  }
+
+  .certif-text {
+    font-size: 0.72rem;
+    line-height: 1.35;
+  }
+
+  .certif-issuer {
+    margin-top: 0.3rem;
+    font-size: 0.58rem;
+  }
 }

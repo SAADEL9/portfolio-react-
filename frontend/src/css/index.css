@@ -212,6 +212,8 @@ body::before {
   .projects-section {
     padding: 3rem 5%;
   }
+  .projects-section-header h2{font-size: 1.2rem;}
+  .projects-section-header p{font-size: 0.8rem;}
   .projects-grid {
     grid-template-columns: 1fr;
     gap: 1.5rem;
