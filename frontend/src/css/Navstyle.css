@@ -10,7 +10,7 @@
   left: 0;
   width: var(--sidebar-w);
   z-index: 1000;
-  background: #131417;
+  background: var(--bg-raised);
   border-right: 1px solid var(--line);
 }
 
@@ -166,6 +166,23 @@
 .nav-socials a:hover { color: var(--ink); }
 .nav-socials a:hover .nav-arrow { color: var(--accent); transform: translate(2px, -2px); }
 
+/* ---- Theme toggle (bottom of sidebar / drawer) ---- */
+.nav-theme {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.8rem;
+  padding-top: 1.3rem;
+}
+
+.nav-theme-mode {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  color: var(--faint);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+}
+
 /* =====================
    MOBILE: sticky header + drawer
    ===================== */
@@ -212,20 +229,8 @@
   .logo-bar { gap: 0.6rem; min-width: 0; }
   .logo-bar .logo-text { font-size: 0.72rem; white-space: nowrap; }
 
-  .nav-cv-btn {
-    font-family: var(--font-mono);
-    font-size: 0.64rem;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    padding: 0.5rem 0.9rem;
-    border: 1px solid var(--line-strong);
-    border-radius: 2px;
-    color: var(--ink);
-    flex-shrink: 0;
-    transition: border-color var(--duration) ease, color var(--duration) ease;
-  }
-  .nav-cv-btn:hover { border-color: var(--accent); color: var(--accent); }
+  /* Theme switch occupies the old CV-button slot */
+  .nav-bar-row .theme-switch { flex-shrink: 0; }
 
   /* Drawer */
   .nav-backdrop {
@@ -247,7 +252,7 @@
     bottom: 0;
     height: 100dvh;
     width: min(290px, 84vw);
-    background: #131417;
+    background: var(--bg-raised);
     border-right: 1px solid var(--line);
     padding: 1.5rem 1.2rem;
     transform: translateX(-105%);

@@ -30,6 +30,34 @@
 }
 
 /* =====================
+   LIGHT THEME — paper editorial.
+   Toggled by the ThemeSwitch in the navbar (html.light).
+   ===================== */
+html.light {
+  --bg:           #F7F6F2;
+  --bg-raised:    #EFEEE8;
+  --bg-hover:     #E9E7E0;
+  --line:         rgba(22, 23, 26, 0.12);
+  --line-strong:  rgba(22, 23, 26, 0.26);
+
+  --ink:    #16171A;
+  --muted:  #5C5F66;
+  --faint:  #8D9096;
+
+  --accent:      #BC5B1E;
+  --accent-soft: rgba(188, 91, 30, 0.10);
+}
+
+html.light ::-webkit-scrollbar-thumb { background: #D8D5CD; border: 2px solid var(--bg); }
+html.light ::-webkit-scrollbar-thumb:hover { background: #C6C2B8; }
+
+/* Solid ink button keeps light text once the ink flips */
+html.light .btn-primary { color: #F7F6F2; }
+
+/* Frosted mobile navbar matches the paper tone */
+html.light .navClass { background: rgba(247, 246, 242, 0.94); }
+
+/* =====================
    RESET & BASE
    ===================== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -43,6 +71,7 @@ body {
   line-height: 1.65;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
+  transition: background-color var(--duration) ease, color var(--duration) ease;
 }
 
 h1, h2, h3, h4 {
