@@ -1,10 +1,13 @@
+import { useState } from 'react';
 import About from '../components/About';
 
 import Certifications from '../components/certifications'; // <-- watch uppercase!
 import Footer from '../components/Footer'; 
 import Hero from '../components/Hero';
 import ProjectCard from "../components/ProjectCard";
-import askLogo from "../assets/home1.png"; 
+import Experience from "../components/Experience";
+import Education from "../components/Education";
+import askLogo from "../assets/home1.png";
 
 
 const projects = [
@@ -103,7 +106,14 @@ const certifs = [
   {title : "Introduction to Containers w/ Docker, Kubernetes & OpenShift" , school :"IBM"}
 ];
 
+const VISIBLE_PROJECTS = 6;
+
 function Home() {
+  const [showAllProjects, setShowAllProjects] = useState(false);
+  const visibleProjects = showAllProjects
+    ? projects
+    : projects.slice(0, VISIBLE_PROJECTS);
+
   return (
     <>
       
@@ -111,23 +121,39 @@ function Home() {
 
       {/* Projects Section */}
       <section className="projects-section" id="projects">
-        <div className="projects-section-header">
-          <span className="terminal-prefix">// my work</span>
+        <header className="sec-head">
+          <span className="sec-num">01</span>
           <h2>Projects</h2>
-          <p>$ ls -la ./projects | grep "built with passion"</p>
-        </div>
-        <div className="projects-grid">
-          {projects.map((project, i) => (
-            <ProjectCard key={i} {...project} />
+        </header>
+        <div className="projects-list">
+          {visibleProjects.map((project, i) => (
+            <ProjectCard key={i} {...project} index={i} featured={i === 0} />
           ))}
         </div>
+        {projects.length > VISIBLE_PROJECTS && (
+          <div className="see-more-wrap">
+            <button
+              className="btn-ghost see-more-btn"
+              onClick={() => setShowAllProjects((v) => !v)}
+            >
+              {showAllProjects ? '↑ See Less' : `See More (${projects.length - VISIBLE_PROJECTS}+)`}
+            </button>
+          </div>
+        )}
       </section>
 
       <About />
 
+      <Experience />
+
+      <Education />
+
       {/* Certifications */}
       <div className="certif-section">
-        <h2>Certifications</h2>
+        <header className="sec-head">
+          <span className="sec-num">05</span>
+          <h2>Certifications</h2>
+        </header>
         <div className="certif-grid">
           {certifs.map((certif, i) => (
             <Certifications key={i} title={certif.title} school={certif.school} />

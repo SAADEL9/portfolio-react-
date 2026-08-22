@@ -92,14 +92,13 @@ const projects = [
 function ProjectsDetail() {
   return (
     <section className="projects-section">
-      <div className="projects-section-header">
-        <span className="terminal-prefix">// all projects</span>
+      <header className="sec-head">
+        <span className="sec-num">02</span>
         <h2>Projects</h2>
-        <p>$ ls -la ./projects | sort --by=passion</p>
-      </div>
-      <div className="projects-grid">
+      </header>
+      <div className="projects-list">
         {projects.map((project, i) => (
-          <ProjectCard key={i} {...project} />
+          <ProjectCard key={i} {...project} index={i} featured={i === 0} />
         ))}
       </div>
     </section>

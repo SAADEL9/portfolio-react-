@@ -62,8 +62,10 @@ function About() {
 
   return (
     <div className="about-container">
-      <span className="terminal-prefix">// my stack</span>
-      <h2>Skills &amp; Technologies</h2>
+      <header className="sec-head">
+        <span className="sec-num">02</span>
+        <h2>Skills &amp; Technologies</h2>
+      </header>
 
       <h3>Programming Languages</h3>
       <div className="about-img">

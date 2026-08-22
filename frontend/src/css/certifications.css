@@ -1,171 +1,84 @@
 /* =====================
-   CERTIFICATIONS
+   CERTIFICATIONS — compact credential rows.
+   Mono index via CSS counter, title, issuer right-aligned.
    ===================== */
 .certif-section {
-  padding: 6rem 6%;
-  max-width: 1400px;
+  padding: 4.5rem 6%;
+  max-width: var(--content-w);
   margin: 0 auto;
 }
 
-.certif-section h2 {
-  font-family: var(--font-display);
-  font-size: clamp(2.2rem, 4vw, 3.5rem);
-  font-weight: 800;
-  color: var(--white);
-  text-align: center;
-  margin-bottom: 4rem;
-  position: relative;
-  display: inline-block;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.certif-section h2::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  bottom: -14px;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 4px;
-  background: var(--gradient-accent);
-  border-radius: 4px;
-}
-
 .certif-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 1.25rem;
+  counter-reset: certif;
+  border-top: 1px solid var(--line);
 }
 
 .certif-card {
-  background: var(--bg-surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 1.75rem 2rem;
-  transition: transform var(--duration) var(--ease-out),
-              border-color var(--duration) ease,
-              box-shadow var(--duration) ease;
-  position: relative;
-  overflow: hidden;
+  counter-increment: certif;
+  display: grid;
+  grid-template-columns: 2.6rem 1fr auto;
+  gap: 1.2rem;
+  align-items: baseline;
+  padding: 1.05rem 0.5rem;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  transition: background var(--duration) ease;
 }
+
+.certif-card:hover { background: var(--bg-raised); }
 
 .certif-card::before {
-  content: '';
-  position: absolute;
-  left: 0; top: 0; bottom: 0;
-  width: 3px;
-  background: var(--gradient-accent);
-  border-radius: 0 3px 3px 0;
-  transform: scaleY(0);
-  transform-origin: top;
-  transition: transform 0.4s var(--ease-out);
+  content: counter(certif, decimal-leading-zero);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent);
 }
-
-.certif-card:hover {
-  transform: translateX(6px);
-  border-color: rgba(168, 85, 247, 0.3);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-}
-
-.certif-card:hover::before { transform: scaleY(1); }
 
 .certif-text {
-  font-family: var(--font-body);
-  font-size: 1rem;
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
   font-weight: 500;
-  color: var(--text);
-  line-height: 1.5;
-}
-
-.certif-text strong {
-  color: var(--white);
-  font-weight: 700;
+  color: var(--ink);
+  line-height: 1.45;
 }
 
 .certif-issuer {
-  margin-top: 0.5rem;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--violet);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 500;
+  color: var(--muted);
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.1em;
+  text-align: right;
 }
 
+/* =====================
+   MOBILE
+   ===================== */
 @media (max-width: 768px) {
-  /* Section */
-  .certif-section {
-    padding: 3rem 4%;
-  }
+  .certif-section { padding: 2.75rem 5%; }
 
-  /* Title */
-  .certif-section h2 {
-    font-size: 1.5rem;
-    margin-bottom: 2.2rem;
-  }
-
-  .certif-section h2::after {
-    bottom: -8px;
-    width: 40px;
-    height: 3px;
-  }
-
-  /* Grid */
-  .certif-grid {
-    grid-template-columns: 1fr;
+  .certif-card {
+    grid-template-columns: 2rem 1fr;
     gap: 0.8rem;
+    padding: 0.95rem 0.25rem;
   }
 
-  /* Cards */
-  .certif-card {
-    padding: 1rem 1.1rem;
-    border-radius: var(--radius-md);
-  }
-
-  /* Disable movement on mobile */
-  .certif-card:hover {
-    transform: none;
-    box-shadow: none;
-  }
-
-  /* Certification text */
-  .certif-text {
-    font-size: 0.8rem;
-    line-height: 1.4;
-  }
-
-  /* Issuer */
   .certif-issuer {
-    margin-top: 0.35rem;
-    font-size: 0.65rem;
-    letter-spacing: 0.04em;
+    grid-column: 2;
+    text-align: left;
+    margin-top: 0.15rem;
   }
+
+  .certif-text { font-size: 0.82rem; }
+  .certif-issuer { font-size: 0.58rem; }
 }
+
+/* =====================
+   SMALL PHONES
+   ===================== */
 @media (max-width: 480px) {
-  .certif-section {
-    padding: 2.5rem 3%;
-  }
-
-  .certif-section h2 {
-    font-size: 1.3rem;
-    margin-bottom: 1.8rem;
-  }
-
-  .certif-grid {
-    gap: 0.6rem;
-  }
-
-  .certif-card {
-    padding: 0.8rem 0.9rem;
-  }
-
-  .certif-text {
-    font-size: 0.72rem;
-    line-height: 1.35;
-  }
-
-  .certif-issuer {
-    margin-top: 0.3rem;
-    font-size: 0.58rem;
-  }
+  .certif-section { padding: 2.25rem 4%; }
+  .certif-text { font-size: 0.75rem; }
+  .certif-issuer { font-size: 0.54rem; }
 }

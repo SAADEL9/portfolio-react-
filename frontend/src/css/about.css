@@ -1,184 +1,77 @@
 /* =====================
-   ABOUT / SKILLS
+   ABOUT / SKILLS — minimal grid, no chips.
+   Icons sit naked on the page; grayscale at rest, color on hover.
    ===================== */
 .about-container {
-  padding: 6rem 6%;
-  max-width: 1400px;
+  padding: 4.5rem 6%;
+  max-width: var(--content-w);
   margin: 0 auto;
 }
 
-/* Terminal prefix above heading */
-.about-container .terminal-prefix {
-  font-family: 'Courier New', monospace;
-  font-size: 0.85rem;
-  color: #7C3AED;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  margin-bottom: 0.5rem;
-  display: block;
-}
-
-/* Section heading block */
-.about-header {
-  margin-bottom: 4rem;
-  text-align: center;
-}
-
-.about-container > h2 {
-  font-family: 'Arial', sans-serif;
-  font-size: clamp(2rem, 4vw, 3.2rem);
-  font-weight: 900;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
-  line-height: 1.1;
-  margin-bottom: 3rem;
-  border-left: 4px solid #fff;
-  padding-left: 1.25rem;
-}
-
-/* Sub-category heading */
+/* Sub-category heading: mono label with hairline */
 .about-container h3 {
-  font-family: var(--font-display);
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--text);
-  margin-top: 3.5rem;
-  margin-bottom: 1.25rem;
   display: flex;
   align-items: center;
-  gap: 10px;
-  letter-spacing: -0.01em;
+  gap: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  margin-top: 2.6rem;
+  margin-bottom: 1.4rem;
 }
 
-.about-container h3::before {
+.about-container h3::after {
   content: '';
-  display: block;
-  width: 8px;
-  height: 8px;
-  background: var(--gradient-primary);
-  border-radius: 50%;
-  flex-shrink: 0;
+  flex: 1;
+  height: 1px;
+  background: var(--line);
 }
 
-/* Icon Grid */
+.about-container h3:first-of-type { margin-top: 0; }
+
+/* Icon grid */
 .about-img {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  gap: 1.1rem 1.4rem;
   align-items: center;
 }
 
 .tech-icon2 {
-  width: 56px;
-  height: 56px;
+  width: 34px;
+  height: 34px;
   object-fit: contain;
-  padding: 10px;
-  border-radius: var(--radius-sm);
-  background: #ffffff;
-  border: 1px solid rgba(0,0,0,0.12);
-  transition: transform var(--duration) var(--ease-out),
-              box-shadow var(--duration) ease;
+  transition: transform var(--duration) var(--ease-out);
 }
 
 .tech-icon2:hover {
-  transform: translateY(-5px) scale(1.08);
-  border-color: rgba(124, 58, 237, 0.4);
-  box-shadow: 0 10px 25px rgba(124, 58, 237, 0.2);
+  transform: translateY(-3px) scale(1.15);
 }
 
 /* =====================
    MOBILE
    ===================== */
-   @media (max-width: 768px) {
-    .about-container {
-      padding: 3rem 4%;
-    }
-  
-    /* Terminal prefix */
-    .about-container .terminal-prefix {
-      font-size: 0.7rem;
-      margin-bottom: 0.35rem;
-    }
-  
-    /* Section heading */
-    .about-header {
-      margin-bottom: 2rem;
-    }
-  
-    .about-container > h2 {
-      font-size: 1.5rem;
-      line-height: 1.1;
-      margin-bottom: 1.8rem;
-      border-left: 3px solid #fff;
-      padding-left: 0.7rem;
-    }
-  
-    /* Sub-category headings */
-    .about-container h3 {
-      font-size: 0.9rem;
-      margin-top: 2rem;
-      margin-bottom: 0.8rem;
-      gap: 7px;
-    }
-  
-    .about-container h3::before {
-      width: 6px;
-      height: 6px;
-    }
-  
-    /* Tech icons */
-    .about-img {
-      gap: 0.6rem;
-    }
-  
-    .tech-icon2 {
-      width: 44px;
-      height: 44px;
-      padding: 8px;
-    }
-  
-    .tech-icon2:hover {
-      transform: none;
-      box-shadow: none;
-    }
+@media (max-width: 768px) {
+  .about-container { padding: 2.75rem 5%; }
+
+  .about-container h3 {
+    font-size: 0.6rem;
+    margin-top: 2rem;
+    margin-bottom: 1.1rem;
   }
-  
-  /* =====================
-     SMALL PHONES
-     ===================== */
-  @media (max-width: 480px) {
-    .about-container {
-      padding: 2.5rem 3%;
-    }
-  
-    .about-container .terminal-prefix {
-      font-size: 0.6rem;
-    }
-  
-    .about-header {
-      margin-bottom: 1.5rem;
-    }
-  
-    .about-container > h2 {
-      font-size: 1.25rem;
-      margin-bottom: 1.5rem;
-      padding-left: 0.6rem;
-    }
-  
-    .about-container h3 {
-      font-size: 0.8rem;
-      margin-top: 1.5rem;
-      margin-bottom: 0.7rem;
-    }
-  
-    .about-img {
-      gap: 0.45rem;
-    }
-  
-    .tech-icon2 {
-      width: 38px;
-      height: 38px;
-      padding: 7px;
-    }
-  }
+
+  .about-img { gap: 0.85rem 1.05rem; }
+  .tech-icon2 { width: 28px; height: 28px; }
+}
+
+/* =====================
+   SMALL PHONES
+   ===================== */
+@media (max-width: 480px) {
+  .about-container { padding: 2.25rem 4%; }
+  .about-img { gap: 0.7rem 0.9rem; }
+  .tech-icon2 { width: 25px; height: 25px; }
+}
