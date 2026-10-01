@@ -10,21 +10,8 @@ const education = [
       "4th year of the engineering cycle, focusing on software engineering, web development, and distributed systems.",
     tags: [],
   },
-  {
-    degree: "Classes Préparatoires (Maths & Physics)",
-    school: "Lycée Mohammed V · Casablanca",
-    period: "2021 – 2023",
-    description:
-      "Intensive two-year preparation in mathematics and physics for the national engineering schools entrance exams.",
-    tags: [],
-  },
-  {
-    degree: "Baccalauréat in Mathematical Sciences",
-    school: "High School · Casablanca",
-    period: "2020 – 2021",
-    description: "Graduated with honors in the mathematical sciences stream.",
-    tags: [],
-  },
+  
+  
 ];
 
 function Education() {

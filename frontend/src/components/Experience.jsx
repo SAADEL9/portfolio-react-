@@ -3,29 +3,14 @@ import "../css/experience.css";
 // Fake data — edit these entries with your real experience
 const experiences = [
   {
-    role: "Full Stack Developer Intern",
-    company: "NovaTech Solutions · Casablanca",
+    role: "software engineer Intern",
+    company: "Pharma 5 · Casablanca",
     period: "Jul 2025 – Sep 2025",
     description:
-      "Built and maintained web application features using React and Spring Boot, collaborated in an Agile team, and helped containerize and deploy services with Docker.",
-    tags: ["React", "Spring Boot", "Docker"],
+      "Developed a Python solution to automate data exchange between Sage X3 and Excel , Automated the export of customer and product  data, data validation, and generation of import files for Sage X3.",
+    tags: ["Python", "Sage X3 web service", "excel","vba","task scheduler","google cloud"],
   },
-  {
-    role: "Frontend Developer Intern",
-    company: "DigitalWave Agency · Remote",
-    period: "Feb 2025 – Jun 2025",
-    description:
-      "Developed responsive landing pages and client dashboards with React and Tailwind CSS, improving page load times and accessibility.",
-    tags: ["React", "Tailwind CSS", "JavaScript"],
-  },
-  {
-    role: "Freelance Web Developer",
-    company: "Self-employed · Remote",
-    period: "2024 – Present",
-    description:
-      "Designed and delivered full-stack websites for local businesses, from requirement gathering to deployment and maintenance.",
-    tags: ["HTML", "CSS", "Django", "MySQL"],
-  },
+  
 ];
 
 function Experience() {
